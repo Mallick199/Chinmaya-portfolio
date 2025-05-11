@@ -6,7 +6,7 @@ const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'chinmaya.dob1999@gmail.com',
-    pass: 'bfqe vnyv rpju pivq', // Your Gmail app password
+    pass: 'htbz modc qlvw yayt', // Your Gmail app password
   },
 });
 
@@ -31,8 +31,8 @@ async function sendEmail(payload) {
   const { name, email, message: userMessage } = payload;
 
   const mailOptions = {
-    from: 'chinmaya.dob@gmail.com',
-    to: 'chinmaya.dob@gmail.com',
+    from: 'chinmaya.dob1999@gmail.com',
+    to: 'chinmaya.dob1999@gmail.com',
     subject: `New Message From ${name}`,
     text: userMessage,
     html: generateEmailTemplate(name, email, userMessage),

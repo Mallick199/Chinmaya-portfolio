@@ -30,14 +30,11 @@ function ContactForm() {
       return;
     } else {
       setError({ ...error, required: false });
-    };
+    }
 
     try {
       setIsLoading(true);
-      const res = await axios.post(
-        `/api/contact`,
-        userInput
-      );
+      const res = await axios.post(`/api/contact`, userInput);
 
       toast.success("Message sent successfully!");
       setUserInput({
@@ -49,15 +46,16 @@ function ContactForm() {
       toast.error(error?.response?.data?.message || "An error occurred. Please try again.");
     } finally {
       setIsLoading(false);
-    };
+    }
   };
 
   return (
-    <div className="relative">
-      <div className="absolute -z-10 top-0 right-0 w-72 h-72 bg-violet-500/20 rounded-full blur-[120px]" />
-      <div className="absolute -z-10 bottom-0 left-0 w-72 h-72 bg-pink-500/20 rounded-full blur-[120px]" />
+    <div className="relative z-0">
+      {/* Background elements */}
+      <div className="absolute -z-[100] top-0 right-0 w-72 h-72 bg-violet-500/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute -z-[100] bottom-0 left-0 w-72 h-72 bg-pink-500/20 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="relative">
+      <div className="relative z-10">
         <div className="flex flex-col items-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">
             Get In Touch
@@ -85,7 +83,7 @@ function ContactForm() {
                       onBlur={checkRequired}
                       className="w-full bg-[#10172d]/50 text-white px-4 py-3 rounded-lg border border-violet-500/20 focus:border-pink-500/40 focus:ring-2 focus:ring-pink-500/20 outline-none transition-all duration-300 placeholder-gray-400"
                     />
-                    <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-violet-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-violet-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                   </div>
 
                   <div className="relative group">
@@ -102,7 +100,7 @@ function ContactForm() {
                       }}
                       className="w-full bg-[#10172d]/50 text-white px-4 py-3 rounded-lg border border-violet-500/20 focus:border-pink-500/40 focus:ring-2 focus:ring-pink-500/20 outline-none transition-all duration-300 placeholder-gray-400"
                     />
-                    <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-violet-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-violet-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                   </div>
                 </div>
 
@@ -117,7 +115,7 @@ function ContactForm() {
                     onBlur={checkRequired}
                     className="w-full bg-[#10172d]/50 text-white px-4 py-3 rounded-lg border border-violet-500/20 focus:border-pink-500/40 focus:ring-2 focus:ring-pink-500/20 outline-none transition-all duration-300 placeholder-gray-400"
                   />
-                  <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-violet-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-violet-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                 </div>
 
                 <div className="text-center mt-8">

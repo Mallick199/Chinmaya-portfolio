@@ -7,7 +7,7 @@ import Marquee from "react-fast-marquee";
 
 function Skills() {
   const skillCategories = {
-    "Frontend": ["React", "Next JS", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind"],
+    "Frontend": ["SAP" ,"React", "Next JS", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind"],
     "Backend": ["Node.js", "Express", "PHP", "MySQL", "MongoDB"],
     "Tools & Platforms": ["Git", "Docker", "AWS", "Firebase", "Figma"]
   };

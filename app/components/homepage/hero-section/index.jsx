@@ -181,7 +181,7 @@ function HeroSection() {
                 >
                   <span className="text-white">skills:</span> [
                   <div className="pl-4 text-yellow-300">
-                    &apos;React&apos;, &apos;Electron&apos;, &apos;Redux&apos;,<br/>
+                    &apos;React&apos;,&apos;SAP&apos;, &apos;Electron&apos;, &apos;Redux&apos;,<br/>
                     &apos;Express&apos;, &apos;NestJS&apos;, &apos;MySQL&apos;,<br/>
                     &apos;MongoDB&apos;, &apos;Docker&apos;, &apos;AWS&apos;,<br/>
                     &apos;PHP&apos;, &apos;Node.js&apos;, &apos;Yii&apos;

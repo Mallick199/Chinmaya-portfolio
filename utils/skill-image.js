@@ -3,6 +3,7 @@ import adobeaudition from '/public/svg/skills/adobeaudition.svg';
 import afterEffects from '/public/svg/skills/after-effects.svg';
 import angular from '/public/svg/skills/angular.svg';
 import aws from '/public/svg/skills/aws.svg';
+import sap from '/public/svg/skills/sap.svg';
 import azure from '/public/svg/skills/azure.svg';
 import blender from '/public/svg/skills/blender.svg';
 import bootstrap from '/public/svg/skills/bootstrap.svg';
@@ -91,6 +92,8 @@ export const skillsImage = (skill) => {
       return nextJS;
     case 'react':
       return react;
+      case 'sap':
+        return sap;
     case 'typescript':
       return typescript;
     case 'vue':

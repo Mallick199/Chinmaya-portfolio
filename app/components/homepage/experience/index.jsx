@@ -1,5 +1,3 @@
-// @flow strict
-
 import { experiences } from "../../../../utils/data/experience";
 import Image from "next/image";
 import { BsPersonWorkspace } from "react-icons/bs";
@@ -48,8 +46,18 @@ function Experience() {
                 <div className="absolute inset-0 bg-gradient-to-r from-violet-500/5 to-pink-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 <div className="relative flex items-start gap-6">
-                  <div className="flex-shrink-0 p-3 bg-gradient-to-r from-violet-500/10 to-pink-500/10 rounded-lg">
-                    <HiOutlineBriefcase className="w-6 h-6 text-pink-500" />
+                  <div className="flex-shrink-0 relative w-16 h-16 rounded-lg overflow-hidden bg-white/10 flex items-center justify-center">
+                    {item.logo ? (
+                      <Image
+                        src={item.logo}
+                        alt={`${item.company} logo`}
+                        width={48}
+                        height={48}
+                        className="object-contain p-1"
+                      />
+                    ) : (
+                      <HiOutlineBriefcase className="w-6 h-6 text-pink-500" />
+                    )}
                   </div>
                   
                   <div className="flex-grow">
@@ -65,6 +73,12 @@ function Experience() {
                     <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
                       {item.company}
                     </p>
+                    
+                    {item.description && (
+                      <p className="mt-2 text-sm text-gray-500 group-hover:text-gray-400 transition-colors duration-300">
+                        {item.description}
+                      </p>
+                    )}
                   </div>
                 </div>
 

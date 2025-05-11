@@ -1,14 +1,17 @@
 "use client";
-// @flow strict
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
+import { FaUserCircle } from "react-icons/fa";
+import { FiUser } from "react-icons/fi"; // React user icon
+import Image from "next/image";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const profileImage = "/cm.jpg"; // Set to your image path or null for icon
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,13 +35,22 @@ function Navbar() {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-[#0d1224]/80 backdrop-blur-md" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          {/* Logo with Profile */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex-shrink-0"
+            className="flex-shrink-0 flex items-center gap-3"
           >
+            {/* Profile Image/Icon */}
+            <div className="relative w-8 h-8 rounded-full overflow-hidden bg-gradient-to-r from-violet-500 to-pink-500 p-0.5 flex items-center justify-center">
+              {profileImage ? (
+                <FiUser className="w-5 h-5 text-white" />
+              ) : (
+                <FiUser className="w-5 h-5 text-white" /> // React user icon
+              )}
+            </div>
+
             <Link
               href="/"
               className="relative group"
@@ -50,7 +62,7 @@ function Navbar() {
             </Link>
           </motion.div>
 
-          {/* Desktop Navigation */}
+          {/* Rest of your Navbar code remains the same... */}
           <div className="hidden md:block">
             <motion.ul
               initial={{ opacity: 0, y: -10 }}
@@ -79,7 +91,6 @@ function Navbar() {
             </motion.ul>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -95,7 +106,6 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       <motion.div
         initial={false}
         animate={isOpen ? "open" : "closed"}
