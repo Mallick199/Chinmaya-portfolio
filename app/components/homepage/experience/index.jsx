@@ -7,7 +7,7 @@ import experience from '/public/lottie/code.json';
 
 function Experience() {
   return (
-    <div id="experience" className="relative py-20 lg:py-32 overflow-hidden">
+    <div id="experience" className="relative py-20 lg:py-32 overflow-hidden ">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       <div className="absolute right-0 bottom-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-violet-500/20 blur-[100px]"></div>
